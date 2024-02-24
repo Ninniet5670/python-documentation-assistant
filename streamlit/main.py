@@ -9,16 +9,16 @@ import google.generativeai as genai
 
 load_dotenv()
 
-api_key=os.getenv("GEMINI_KEY")
+api_key = os.getenv("GEMINI_KEY")
 genai.configure(api_key=api_key)
-
 model = genai.GenerativeModel('gemini-pro')
 
 SITE_URL = 'https://packaging.python.org/en/latest/tutorials/packaging-projects/#choosing-build-backend'
 response = requests.get(SITE_URL)
 soup = BeautifulSoup(response.content, 'html.parser')
 
-st.title('Guia de Usário para Pacotes Python')
+st.title('Guia de Usário para Pacotes Python no que tange o guia no link a seguir:')
+st.text('https://packaging.python.org/en/latest/tutorials/packaging-projects/#choosing-build-backend')
 question = st.text_input("O que deseja saber?", "Do que se trata essa documentação?")
 
 if st.button("Enviar"):        
